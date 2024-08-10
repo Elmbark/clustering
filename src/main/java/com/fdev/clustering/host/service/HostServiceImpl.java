@@ -15,6 +15,7 @@ import org.libvirt.Domain;
 import org.libvirt.DomainInfo;
 import org.libvirt.LibvirtException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -24,12 +25,10 @@ import java.util.List;
 public class HostServiceImpl implements HostService{
 
     private Connect connect;
-    private  final HostRepository hostRepository;
+    @Autowired
+    private HostRepository hostRepository;
+    @Autowired
     private ClusterRepository clusterRepository;
-
-    public HostServiceImpl(HostRepository hostRepository) {
-        this.hostRepository = hostRepository;
-    }
 
     public void VMManager() throws LibvirtException {
         this.connect = new Connect("qemu:///system", false);

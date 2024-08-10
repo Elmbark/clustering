@@ -19,12 +19,9 @@ import java.util.stream.Collectors;
 @Service
 public class ClusterServiceImpl implements ClusterService {
 
-    private final ClusterRepository clusterRepository;
-
     @Autowired
-    public ClusterServiceImpl(ClusterRepository clusterRepository) {
-        this.clusterRepository = clusterRepository;
-    }
+    private  ClusterRepository clusterRepository;
+
 
     @Override
     public ClusterDTO createCluster(ClusterCreationRequest request) {
