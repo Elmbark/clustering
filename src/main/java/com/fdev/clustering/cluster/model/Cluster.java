@@ -52,4 +52,9 @@ public class Cluster {
         host.setCluster(null);
     }
 
+    public Cluster(String id) {
+        super();
+        this.id = id;
+    }
+
 }

@@ -8,9 +8,15 @@ import java.util.Map;
 @AllArgsConstructor
 @Builder
 public class HostCreationRequest {
-    private String hostname;
-    private String ipAddress;
+    //private String hostname;
+    /*private String ipAddress;
     private String clusterId;
     private Map<String,String> configuration;
+    */
+    String hostname;
+    int vcpus;
+    long memoryMB;
+    String osVariant;
+    String clusterId;
 
 }

@@ -1,7 +1,7 @@
 package com.fdev.clustering.host.model;
 
 import com.fdev.clustering.cluster.model.Cluster;
-import com.fdev.clustering.host.model.Status;
+
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,12 +20,24 @@ public class Host {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+
     @Column
     private String hostName;
+
     @Column
     private String ipAddress;
-    @Column
-    private Status status;
+
+    @Column(nullable = false)
+    private String state;
+
+    @Column(nullable = false)
+    private int vcpus;
+
+    @Column(nullable = false)
+    private Long memoryMB;
+
+    @Column(nullable = false)
+    private String osVariant;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
